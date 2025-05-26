@@ -124,7 +124,7 @@ yaml- name: Invalidate CloudFront cache
 
 ### CI/CD란?
 
-**CI (Continuous Integration)**는 개발자들이 코드 변경사항을 자주 메인 브랜치에 통합하는 개발 방법론입니다. **CD (Continuous Deployment/Delivery)**는 코드 변경사항을 자동으로 프로덕션 환경에 배포하는 과정입니다.
+CI (Continuous Integration)는 개발자들이 코드 변경사항을 자주 메인 브랜치에 통합하는 개발 방법론입니다. CD (Continuous Deployment/Delivery)는 코드 변경사항을 자동으로 프로덕션 환경에 배포하는 과정입니다.
 
 ### GitHub Actions의 핵심 개념
 
@@ -436,3 +436,20 @@ steps:
 - S3 스토리지 클래스 최적화
 - CloudFront 무효화 횟수 제한
 - 불필요한 워크플로우 실행 방지
+
+---
+
+# CDN과 성능 최적화
+
+<img width="2519" alt="Image" src="https://github.com/user-attachments/assets/92cc99f2-dcdd-46b8-ba67-a2bbbf42fb38" />
+
+### S3 vs Cloudfront
+
+- 전반적으로 파일의 크기과 응답시간을 비교하면 Cloudfront가 가볍고 빠르다는 것을 확인할 수 있다.
+
+#### document 크기, 시간 비교
+
+|      | S3      | Cloudfront |
+| ---- | ------- | ---------- |
+| 크기 | 13.5 kB | 3.5 kB     |
+| 시간 | 233ms   | 22ms       |
